@@ -1,7 +1,7 @@
  import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.math.BigInteger;
 
 public class Main {
 	public static void main(String args[])throws IOException {
@@ -15,10 +15,12 @@ public class Main {
 	public static long hash(int n, String s) {
 		long temp = 0;
 		for(int i = 0; i < n; i++) {
-			temp += Math.pow(31, i)*(s.charAt(i)-'a'+1);
+			temp += (Math.pow(31, i)%1234567891 * (s.charAt(i)-'a'+1)%1234567891)%1234567891;
 		}
 		return temp%1234567891;
 	}
 	
 }
+
+
  
